@@ -2,5 +2,8 @@
 @import "abstracts/mixins";
 
 @import "base/reset";
+@import "base/typography";
+
+@import "components/dark-mode";
 
 @import "pages/home";
