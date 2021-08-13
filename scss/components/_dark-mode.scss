@@ -4,4 +4,21 @@
     background-image: url("/images/bg-desktop-dark.jpg");
   }
   background-color: $darkPrimaryColor;
+  color: $lightPrimaryBlueLight !important;
+}
+
+.dark-content {
+  background-color: $darkContent !important;
+  & > * {
+    color: $lightPrimaryBlueLight !important;
+    border-color: $PrimaryGreyDark !important;
+  }
+  & .task:hover {
+    background-color: $PrimaryGreyDark !important;
+  }
+
+  & + .tasks--menu {
+    background-color: $darkContent !important;
+    color: $lightPrimaryBlueLight !important;
+  }
 }

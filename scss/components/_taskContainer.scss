@@ -1,0 +1,112 @@
+.section--tasks {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: $lightPrimaryGray;
+  max-height: 40rem;
+  @include responsiveMax($phone-mini) {
+    max-height: 30rem;
+  }
+  overflow-y: scroll;
+  position: relative;
+  box-shadow: 1px 5px 10px rgba($color: $darkPrimaryColor, $alpha: 0.2);
+  position: relative;
+
+  .task {
+    padding: 2rem 3rem 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $lightPrimaryBlueLight;
+    color: $PrimaryGreyDark;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $lightPrimaryBlueLight;
+      transition: all 0.3s;
+    }
+
+    &--info {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+    }
+
+    &--close {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+  }
+
+  .task:not(:first-child) {
+    // margin: 1rem 0;
+  }
+}
+.tasks--resume {
+  background-color: $lightPrimaryGray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $PrimaryGrayBlueDark;
+  position: relative;
+  top: 0;
+  // border-top: 1px solid $lightPrimaryBlueLight;
+
+  // .tasks--all:hover {
+  //   color: $colorPrimary;
+  //   transition: all 0.3s;
+  //   cursor: pointer;
+  // }
+
+  .tasks--menu-actual {
+    color: $colorPrimary;
+  }
+
+  .tasks--clear {
+    cursor: pointer;
+    &:hover {
+      color: $colorPrimary;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+.tasks--menu {
+  display: flex;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: $lightPrimaryGray;
+  cursor: pointer;
+  color: $PrimaryGrayBlueDark;
+  align-items: center;
+
+  &-desktop {
+    width: 40%;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+    border-radius: 5px;
+    @include responsiveMax($table) {
+      display: none;
+    }
+  }
+
+  &-mob {
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    @include responsiveMin($table) {
+      display: none;
+    }
+  }
+
+  & > *:hover {
+    color: $colorPrimary;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
