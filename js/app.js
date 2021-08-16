@@ -29,19 +29,19 @@ class App {
   #tasks = [];
   constructor() {
     form.addEventListener("submit", this.#addNewTask.bind(this));
-    darkModeToggle.addEventListener("onClick", this.#darkModeToggle);
-    sectionTasks.addEventListener("onClick", this.#markTask.bind(this));
-    btnActive.addEventListener("onClick", (e) => {
+    darkModeToggle.addEventListener("click", this.#darkModeToggle);
+    sectionTasks.addEventListener("click", this.#markTask.bind(this));
+    btnActive.addEventListener("click", (e) => {
       this.#showFilteredEl("active", btnActive);
     });
-    btnCompleted.addEventListener("onClick", (e) => {
+    btnCompleted.addEventListener("click", (e) => {
       this.#showFilteredEl("completed", btnCompleted);
     });
-    btnAll.addEventListener("onClick", (e) => {
+    btnAll.addEventListener("click", (e) => {
       this.#showFilteredEl("all", btnAll);
     });
 
-    btnClear.addEventListener("onClick", this.#clearCompleted.bind(this));
+    btnClear.addEventListener("click", this.#clearCompleted.bind(this));
     this.#filterTasks(true);
     this.#getLocalStorage();
   }
