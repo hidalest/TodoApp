@@ -26,27 +26,30 @@ class Task {
 // console.log(task1);
 
 class App {
-  #tasks = [];
+  tasks = [];
   constructor() {
-    form.addEventListener("submit", this.#addNewTask.bind(this));
-    darkModeToggle.addEventListener("click", this.#darkModeToggle);
-    sectionTasks.addEventListener("click", this.#markTask.bind(this));
+    form.addEventListener("submit", this.addNewTask.bind(this));
+    darkModeToggle.addEventListener("click", this.darkModeToggle);
+    sectionTasks.addEventListener("click", this.markTask.bind(this));
     btnActive.addEventListener("click", (e) => {
-      this.#showFilteredEl("active", btnActive);
+      this.showFilteredEl("active", btnActive);
     });
     btnCompleted.addEventListener("click", (e) => {
-      this.#showFilteredEl("completed", btnCompleted);
+      this.showFilteredEl("completed", btnCompleted);
     });
     btnAll.addEventListener("click", (e) => {
-      this.#showFilteredEl("all", btnAll);
+      this.showFilteredEl("all", btnAll);
     });
 
-    btnClear.addEventListener("click", this.#clearCompleted.bind(this));
-    this.#filterTasks(true);
-    this.#getLocalStorage();
+    btnClear.addEventListener("click", this.clearCompleted.bind(this));
+    this.filterTasks(true);
+    this.getLocalStorage();
   }
 
-  #addNewTask(e) {
+  addNewTask(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     let error = false;
 
     if (taskInput.value === "") {
@@ -54,17 +57,19 @@ class App {
       error = true;
     } else form.classList.remove("error");
 
+    debugger;
     if (error) return;
 
     const task = new Task(taskInput.value);
-    this.#tasks.unshift(task);
+    this.tasks.unshift(task);
     taskInput.value = "";
-    this.#insertNewTask(task);
-    this.#setLocalStorage();
-    e.preventDefault();
+    this.insertNewTask(task);
+    this.setLocalStorage();
+
+    return false;
   }
 
-  #insertNewTask(t) {
+  insertNewTask(t) {
     // this.#activeTasks();
     const div1 = document.createElement("div");
     div1.classList.add("task");
@@ -83,10 +88,10 @@ class App {
       </div>`;
     sectionTasks.prepend(div1);
 
-    this.#filterTasks(true);
+    this.filterTasks(true);
   }
 
-  #refreshTaskContainer(tasks) {
+  refreshTaskContainer(tasks) {
     // sectionTasks is the container of the tasks
     sectionTasks.innerHTML = "";
     tasks.forEach((t) => {
@@ -108,7 +113,7 @@ class App {
     });
   }
 
-  #darkModeToggle(e) {
+  darkModeToggle(e) {
     body.classList.toggle("dark-body");
     const button = darkModeToggle.getAttribute("src");
     if (button.indexOf("./images/icon-moon.svg") == 0) {
@@ -124,8 +129,8 @@ class App {
     taskMenu.classList.toggle("dark-content");
   }
 
-  #filterTasks(status) {
-    const active = this.#tasks.filter((task) => task.isActive === status);
+  filterTasks(status) {
+    const active = this.tasks.filter((task) => task.isActive === status);
 
     if (status) counter.innerHTML = `${active.length} items left`;
     else counter.innerHTML = `${active.length} items done`;
@@ -133,7 +138,7 @@ class App {
     return active;
   }
 
-  #showFilteredEl(status, btn) {
+  showFilteredEl(status, btn) {
     const allEl = document.querySelectorAll(".task");
     const activeEl = document.querySelectorAll(".task:not(.task--done)");
     const completedEl = document.querySelectorAll(".task--done");
@@ -155,19 +160,19 @@ class App {
     btn.classList.add("tasks--menu-actual");
   }
 
-  #clearCompleted() {
-    const cTasks = this.#tasks.filter((el) => el.isActive !== false);
-    this.#tasks = cTasks;
-    this.#refreshTaskContainer(this.#tasks);
-    this.#setLocalStorage();
+  clearCompleted() {
+    const cTasks = this.tasks.filter((el) => el.isActive !== false);
+    this.tasks = cTasks;
+    this.refreshTaskContainer(this.tasks);
+    this.setLocalStorage();
 
     console.log(cTasks);
   }
 
-  #markTask(e) {
+  markTask(e) {
     const taskEl = e.target.closest(".task");
     const check = taskEl.querySelector(".checkbox--group-input");
-    const nTask = this.#tasks.find((el) => el.id == taskEl.dataset.id);
+    const nTask = this.tasks.find((el) => el.id == taskEl.dataset.id);
     if (!taskEl) return;
 
     taskEl.classList.toggle("task--selected");
@@ -176,19 +181,19 @@ class App {
     check.checked == false ? (check.checked = true) : (check.checked = false);
     nTask.isActive == true ? (nTask.isActive = false) : (nTask.isActive = true);
 
-    this.#filterTasks(true);
+    this.filterTasks(true);
   }
 
-  #setLocalStorage() {
-    localStorage.setItem("tasks", JSON.stringify(this.#tasks));
+  setLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 
-  #getLocalStorage() {
+  getLocalStorage() {
     const data = JSON.parse(localStorage.getItem("tasks"));
     console.log(data);
     if (!data) return;
-    this.#tasks = data;
-    this.#tasks.forEach((el) => this.#insertNewTask(el));
+    this.tasks = data;
+    this.tasks.forEach((el) => this.insertNewTask(el));
   }
 }
 
