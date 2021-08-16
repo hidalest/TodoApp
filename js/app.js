@@ -48,7 +48,6 @@ class App {
   }
 
   #addNewTask(e) {
-    e.preventDefault();
     let error = false;
 
     if (taskInput.value === "") {
@@ -63,6 +62,7 @@ class App {
     taskInput.value = "";
     this.#insertNewTask(task);
     this.#setLocalStorage();
+    e.preventDefault();
   }
 
   #insertNewTask(t) {

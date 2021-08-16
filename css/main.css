@@ -227,7 +227,7 @@ html {
 
 .checkbox--group-input:checked ~ .checkbox--group-button {
   background: linear-gradient(0.8turn, #57ddff, #c058f3);
-  content: url("/images/icon-check.svg");
+  content: url("../images/icon-check.svg");
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -244,9 +244,15 @@ html {
   position: relative;
 }
 
+@media (max-width: 75em) {
+  .section--tasks {
+    height: 20rem;
+  }
+}
+
 @media (max-width: 47.875em) {
   .section--tasks {
-    height: 30rem;
+    height: 20rem;
   }
 }
 
@@ -361,7 +367,7 @@ html {
   border-radius: 5px;
 }
 
-@media (max-width: 50em) {
+@media (max-width: 53.125em) {
   .tasks--menu-desktop {
     display: none;
   }
@@ -378,7 +384,7 @@ html {
   margin-bottom: 4rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 53.125em) {
   .tasks--menu-mob {
     display: none;
   }
@@ -409,34 +415,10 @@ body {
 .main {
   width: 90%;
   position: absolute;
-  top: 40%;
+  top: 30rem;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-@media (max-width: 75em) {
-  .main {
-    top: 30%;
-  }
-}
-
-@media (max-width: 50em) {
-  .main {
-    top: 35%;
-  }
-}
-
-@media (max-width: 47.875em) {
-  .main {
-    top: 40%;
-  }
-}
-
-@media (max-width: 20em) {
-  .main {
-    top: 55%;
-  }
 }
 
 .main .header {

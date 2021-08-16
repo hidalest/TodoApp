@@ -14,24 +14,9 @@ body {
 .main {
   width: 90%;
   position: absolute;
-  top: 40%;
+  top: 30rem;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  @include responsiveMax($table-land) {
-    top: 30%;
-  }
-
-  @include responsiveMax($table) {
-    top: 35%;
-  }
-  @include responsiveMax($phone) {
-    top: 40%;
-  }
-
-  @include responsiveMax($phone-mini) {
-    top: 55%;
-  }
 
   .header {
     width: 100%;

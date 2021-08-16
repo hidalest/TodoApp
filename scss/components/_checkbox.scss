@@ -37,7 +37,7 @@
   }
   &-input:checked ~ &-button {
     background: $backgroundGradient;
-    content: url("/images/icon-check.svg");
+    content: url("../images/icon-check.svg");
     transition: all 0.5s;
   }
 
