@@ -10,15 +10,27 @@
 .dark-content {
   background-color: $darkContent !important;
   & > * {
-    color: $lightPrimaryBlueLight !important;
+    color: $lightPrimaryBlueLight;
     border-color: $PrimaryGreyDark !important;
+  }
+  & .task {
+    color: $lightPrimaryBlueLight !important;
   }
   & .task:hover {
     background-color: $PrimaryGreyDark !important;
   }
 
+  & .task--done {
+    // background-color: $VeryDarkGrayishBlue1 !important;
+    color: $VeryDarkGrayishBlue1 !important;
+  }
+
   & + .tasks--menu {
     background-color: $darkContent !important;
     color: $lightPrimaryBlueLight !important;
+
+    & * > :hover {
+      color: red !important;
+    }
   }
 }

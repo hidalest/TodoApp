@@ -2,9 +2,9 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: $lightPrimaryGray;
-  max-height: 40rem;
-  @include responsiveMax($phone-mini) {
-    max-height: 30rem;
+  height: 40rem;
+  @include responsiveMax($phone) {
+    height: 30rem;
   }
   overflow-y: scroll;
   position: relative;
@@ -19,9 +19,19 @@
     border-bottom: 2px solid $lightPrimaryBlueLight;
     color: $PrimaryGreyDark;
     transition: all 0.3s;
+    text-transform: capitalize;
 
     &:hover {
       background-color: $lightPrimaryBlueLight;
+      transition: all 0.3s;
+    }
+
+    &--selected {
+      transition: all 0.3s;
+      color: $LightGrayishBlue;
+    }
+    &--done {
+      text-decoration-line: line-through;
       transition: all 0.3s;
     }
 
@@ -99,6 +109,7 @@
     padding: 1.5rem 0;
     border-radius: 5px;
     font-size: 1.3rem;
+    margin-bottom: 4rem;
     @include responsiveMin($table) {
       display: none;
     }
