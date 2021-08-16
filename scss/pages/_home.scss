@@ -15,6 +15,10 @@ body {
   width: 90%;
   position: absolute;
   top: 30rem;
+
+  @include responsiveMin($table-land) {
+    top: 40rem;
+  }
   left: 50%;
   transform: translate(-50%, -50%);
 

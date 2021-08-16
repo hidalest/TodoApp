@@ -421,6 +421,12 @@ body {
           transform: translate(-50%, -50%);
 }
 
+@media (min-width: 75em) {
+  .main {
+    top: 40rem;
+  }
+}
+
 .main .header {
   width: 100%;
   display: -webkit-box;
