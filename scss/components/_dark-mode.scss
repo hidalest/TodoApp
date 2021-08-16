@@ -1,7 +1,7 @@
 .dark-body {
-  background-image: url("./images/bg-mobile-dark.jpg");
+  background-image: url("../images/bg-mobile-dark.jpg");
   @include responsiveMin($phone) {
-    background-image: url("./images/bg-desktop-dark.jpg");
+    background-image: url("../images/bg-desktop-dark.jpg");
   }
   background-color: $darkPrimaryColor;
   color: $lightPrimaryBlueLight !important;

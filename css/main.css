@@ -86,14 +86,14 @@ html {
 }
 
 .dark-body {
-  background-image: url("./images/bg-mobile-dark.jpg");
+  background-image: url("../images/bg-mobile-dark.jpg");
   background-color: #161722;
   color: #e4e5f1 !important;
 }
 
 @media (min-width: 47.875em) {
   .dark-body {
-    background-image: url("./images/bg-desktop-dark.jpg");
+    background-image: url("../images/bg-desktop-dark.jpg");
   }
 }
 
@@ -393,7 +393,7 @@ html {
 
 body {
   background: #e4e5f1;
-  background-image: url("./images/bg-mobile-light.jpg");
+  background-image: url("../images/bg-mobile-light.jpg");
   height: 100vh;
   background-repeat: no-repeat;
   background-size: contain;
@@ -402,7 +402,7 @@ body {
 
 @media (min-width: 47.875em) {
   body {
-    background-image: url("./images/bg-desktop-light.jpg");
+    background-image: url("../images/bg-desktop-light.jpg");
   }
 }
 
