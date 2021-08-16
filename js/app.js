@@ -112,10 +112,10 @@ class App {
   #darkModeToggle(e) {
     body.classList.toggle("dark-body");
     const button = darkModeToggle.getAttribute("src");
-    if (button.indexOf("/images/icon-moon.svg") == 0) {
-      darkModeToggle.setAttribute("src", "/images/icon-sun.svg");
+    if (button.indexOf("../images/icon-moon.svg") == 0) {
+      darkModeToggle.setAttribute("src", "../images/icon-sun.svg");
     } else {
-      darkModeToggle.setAttribute("src", "/images/icon-moon.svg");
+      darkModeToggle.setAttribute("src", "../images/icon-moon.svg");
     }
 
     form.classList.toggle("dark-content");
@@ -190,11 +190,6 @@ class App {
     if (!data) return;
     this.#tasks = data;
     this.#tasks.forEach((el) => this.#insertNewTask(el));
-  }
-
-  //TODO delete this after completing the app
-  getTasks() {
-    return this.#tasks;
   }
 }
 

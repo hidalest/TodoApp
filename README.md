@@ -36,15 +36,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-![](./screenshot2.jpg)
+![Screenshot 1](./screenshot.jpg)
+![Screenshot 2](./screenshot2.jpg)
 
 -
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://ehidalgo506-dev.github.io/TodoApp/)
+- Solution URL: [Front-end mentor solution](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub/mobile-first-design-scss-vainillajs-html-css-Bdg8tddPE)
+- Live Site URL: [https://ehidalgo506-dev.github.io/TodoApp/](https://ehidalgo506-dev.github.io/TodoApp/)
 
 ## My process
 
@@ -73,7 +73,9 @@ I didn't know how to implement Dark Mode and with this project now I have an ove
 
 I've heard about LocalStorage before but I have never use it so for this project for me it seems it was a good idea and investigated and implement it.
 
-:
+=========================
+Proud of this JS function
+=========================
 
 ```js
 const proudOfThisFunc = () => {
@@ -100,8 +102,8 @@ This project helped me learn and practice a lot of thigs but it also opened my e
 
 ### Useful resources
 
-- [Example resource 1](https://www.youtube.com/watch?v=P69ItyngM-0&t=188s&ab_channel=Codementor) - I was struggling with deleted all the objects that the property isActive was false and looking at this youtuber helped me a lot.
-- [Example resource 2](https://developer.mozilla.org/en-US/) - The bible of web developers.
+- [Codementor](https://www.youtube.com/watch?v=P69ItyngM-0&t=188s&ab_channel=Codementor) - I was struggling with deleted all the objects that the property isActive was false and looking at this youtuber helped me a lot.
+- [MDN](https://developer.mozilla.org/en-US/) - The bible of web developers.
 
 ## Author
 
@@ -111,7 +113,7 @@ This project helped me learn and practice a lot of thigs but it also opened my e
 
 ## Acknowledgments
 
-I want to say thanks to @crutchcorn (https://www.twitch.tv/crutchcorn) who I met on twitch and he has always giving me tips and guidance.
+I want to say thanks to [@crutchcorn](https://www.twitch.tv/crutchcorn) who I met on twitch and he has always giving me tips and guidance.
 
 And Robert Mennel from crutchcorn's Discord server who always answers any of my JS questions.
 
