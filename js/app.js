@@ -9,9 +9,9 @@ const sectionTasks = document.querySelector(".section--tasks");
 const taskResume = document.querySelector(".tasks--resume");
 const taskMenu = document.querySelector(".tasks--menu");
 const counter = document.querySelector(".tasks--left");
-const btnActive = document.querySelector(".tasks--menu-active");
-const btnCompleted = document.querySelector(".tasks--menu-completed");
-const btnAll = document.querySelector(".tasks--menu-all");
+const btnActive = document.querySelectorAll(".tasks--menu-active");
+const btnCompleted = document.querySelectorAll(".tasks--menu-completed");
+const btnAll = document.querySelectorAll(".tasks--menu-all");
 const btnClear = document.querySelector(".tasks--clear");
 
 class Task {
@@ -29,19 +29,30 @@ class App {
   tasks = [];
   constructor() {
     form.addEventListener("submit", this.addNewTask.bind(this));
-    darkModeToggle.addEventListener("click", this.darkModeToggle);
-    sectionTasks.addEventListener("click", this.markTask.bind(this));
-    btnActive.addEventListener("click", (e) => {
-      this.showFilteredEl("active", btnActive);
-    });
-    btnCompleted.addEventListener("click", (e) => {
-      this.showFilteredEl("completed", btnCompleted);
-    });
-    btnAll.addEventListener("click", (e) => {
-      this.showFilteredEl("all", btnAll);
-    });
+    darkModeToggle.onclick = this.darkModeToggle;
+    sectionTasks.onclick = this.markTask.bind(this);
 
-    btnClear.addEventListener("click", this.clearCompleted.bind(this));
+    Array.from(btnActive).forEach(
+      (b) =>
+        (b.onclick = (e) => {
+          this.showFilteredEl("active", b);
+        })
+    );
+
+    Array.from(btnCompleted).forEach(
+      (b) =>
+        (b.onclick = (e) => {
+          this.showFilteredEl("completed", b);
+        })
+    );
+    Array.from(btnAll).forEach(
+      (b) =>
+        (b.onclick = (e) => {
+          this.showFilteredEl("all", b);
+        })
+    );
+
+    btnClear.onclick = this.clearCompleted.bind(this);
     this.filterTasks(true);
     this.getLocalStorage();
   }
@@ -57,7 +68,6 @@ class App {
       error = true;
     } else form.classList.remove("error");
 
-    debugger;
     if (error) return;
 
     const task = new Task(taskInput.value);
@@ -177,8 +187,16 @@ class App {
 
     taskEl.classList.toggle("task--selected");
     taskEl.classList.toggle("task--done");
-
     check.checked == false ? (check.checked = true) : (check.checked = false);
+
+    if (check.checked) {
+      taskEl.classList.add("task--done");
+      taskEl.classList.add("task--selected");
+    } else {
+      taskEl.classList.remove("task--done");
+      taskEl.classList.remove("task--selected");
+    }
+
     nTask.isActive == true ? (nTask.isActive = false) : (nTask.isActive = true);
 
     this.filterTasks(true);

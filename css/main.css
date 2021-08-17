@@ -342,6 +342,14 @@ html {
   cursor: pointer;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  color: #9394a5;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .tasks--menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,11 +359,16 @@ html {
   font-size: 1.2rem;
   font-weight: 600;
   background-color: #fafafa;
-  cursor: pointer;
   color: #9394a5;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.tasks--menu .task--menu-item {
+  border: none;
+  background-color: none;
+  cursor: pointer;
 }
 
 .tasks--menu-desktop {
