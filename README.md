@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot 1](./screenshot.jpg)
-![Screenshot 2](./screenshot2.jpg)
+![Screenshot 1](images/screenshot.png)
+![Screenshot 2](images/screenshot2.png)
 
 -
 

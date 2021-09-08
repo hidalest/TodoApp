@@ -213,6 +213,10 @@ class App {
     this.tasks = data;
     this.tasks.forEach((el) => this.insertNewTask(el));
   }
+
+  reset() {
+    localStorage.removeItem("tasks");
+  }
 }
 
 const app = new App();
