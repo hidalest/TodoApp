@@ -43,7 +43,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Front-end mentor solution](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub/mobile-first-design-scss-vainillajs-html-css-Bdg8tddPE)
-- Live Site URL: [https://ehidalgo506-dev.github.io/TodoApp/](https://ehidalgo506-dev.github.io/TodoApp/)
+- Live Site URL: [https://hidalest.github.io/TodoApp/](https://hidalest.github.io/TodoApp/)
 
 ## My process
 
@@ -107,8 +107,8 @@ This project helped me learn and practice a lot of thigs but it also opened my e
 ## Author
 
 - Website - [Todo - Esteban Hidalgo](https://www.your-site.com)
-- Frontend Mentor - [@ehidalgo506-dev](https://www.frontendmentor.io/profile/@ehidalgo506-dev)
-- Github - [@ehidalgo506-dev](https://github.com/ehidalgo506-dev)
+- Frontend Mentor - [@hidalest](https://www.frontendmentor.io/profile/@hidalest)
+- Github - [@hidalest](https://github.com/hidalest)
 
 ## Acknowledgments
 
